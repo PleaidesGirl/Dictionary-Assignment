@@ -80,6 +80,7 @@ make_lowercase(words)
 # common_words removed. Go through the words in book_words and add it to the
 # new list if the word isn't in the common_words list. Return the new list.
 def remove_common_words(book_words, common_words):
+    #how do we determine common words? just words that are repeated more than twice or something?
     return ['need to implement remove_common_words']
 
 # Given a list of text_words and another list of words, count how many times
