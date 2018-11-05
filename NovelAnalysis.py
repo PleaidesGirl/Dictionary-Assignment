@@ -1,8 +1,7 @@
 import re, operator
 
 # Initial code written by David Johnson, University of Utah.
-# Author of final code: Ivan Lee
-
+# Author of final code: Ivan Lee, Celine Cavanaugh
 
 #
 #
