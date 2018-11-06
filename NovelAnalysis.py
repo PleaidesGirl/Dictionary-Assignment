@@ -117,8 +117,9 @@ def average_word_length(text_words):
     for word in text_words:
         total_words += 1
         total_word_length = total_word_length + len(word)
+        average_length = total_word_length/total_words
         #I'm not sure if this works
-    return 0 # Need to implement this function
+    return average_length # Need to implement this function
 
 # Make a dictionary that has words of text_words as keys and how many
 # times that word appears in text_words as the value.
