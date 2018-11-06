@@ -132,7 +132,7 @@ def calculate_word_frequency(text_words):
             word_frequency[word] += 1
         else:
             word_frequency[word] = 1
-    return {word_frequency}
+    return word_frequency
 
 # Count the words in word_list that appear in positive_words, then count the
 # words in word_list that appear in negative words.
