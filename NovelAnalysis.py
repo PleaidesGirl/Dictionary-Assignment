@@ -126,8 +126,13 @@ def average_word_length(text_words):
 # Refer to the lecture slides for how to do this.
 # Return the dictionary.
 def calculate_word_frequency(text_words):
-    return {"need to implement": "calculate_word_frequency"}
-
+    word_frequency = {}
+    for word in text_words:
+        if word in word_frequency:
+            word_frequency[word] += 1
+        else:
+            word_frequency[word] = 1
+    return {word_frequency}
 
 # Count the words in word_list that appear in positive_words, then count the
 # words in word_list that appear in negative words.
