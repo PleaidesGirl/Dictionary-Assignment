@@ -82,6 +82,12 @@ make_lowercase(words)
 def remove_common_words(book_words, common_words):
     #how do we determine common words? just words that are repeated more than twice or something?
     #I checked the files given to us and there isn't a common words document
+    word_frequency = {}
+    for word in book_words:
+        if word in word_frequency:
+            word_frequency[word]+=1
+        else:
+            word_frequency[word]=1
     return ['need to implement remove_common_words']
 
 # Given a list of text_words and another list of words, count how many times
