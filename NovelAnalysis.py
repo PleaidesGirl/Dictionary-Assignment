@@ -1,7 +1,8 @@
 import re, operator
 
 # Initial code written by David Johnson, University of Utah.
-# Author of final code: Ivan Lee, Celine Cavanaugh
+# Author of final code: Celine Cavanaugh, Ivan Lee
+
 
 #
 #
@@ -60,35 +61,36 @@ def break_words_into_chunks(text_words, chunk_size):
 # Given a filename, open that file, read all the lines and return a list of all the words in the file.
 # Use split() to break a line into words.
 def read_all_words_in_file(filename):
-    all_words = []
+
+    words = list()
+
     with open (filename) as file:
         for line in file:
-            all_words += line.split()
-    return [read_all_words_in_file]
+            sentenceWords = line.split()
+            for word in sentenceWords:
+                words.append(word)
+    return words
+
+
 
 # Given a list of words, return a new list with all the words lower case. Use
 # the string lower() method to make the word lower case.
 def make_lowercase(words):
-    lowercase = []
-    for letters in words:
-        lowercase.append(words.lower())
-    print(lowercase)
-    return [make_lowercase]
-words = ["Casey", "Neistat", "Shawn"]
-make_lowercase(words)
+    newlist = list()
+    for word in words:
+        newWord = str(word).lower()
+        newlist.append((newWord))
+    return newlist
+
 # This function makes a new list from book_words that has all the words in
 # common_words removed. Go through the words in book_words and add it to the
 # new list if the word isn't in the common_words list. Return the new list.
 def remove_common_words(book_words, common_words):
-    #how do we determine common words? just words that are repeated more than twice or something?
-    #I checked the files given to us and there isn't a common words document
-    word_frequency = {}
+    newlist = list()
     for word in book_words:
-        if word in word_frequency:
-            word_frequency[word]+=1
-        else:
-            word_frequency[word]=1
-    return ['need to implement remove_common_words']
+        if not common_words.__contains__(word):
+            newlist.append(word)
+    return newlist
 
 # Given a list of text_words and another list of words, count how many times
 # any word in text_words has a match in other_list.
@@ -156,7 +158,7 @@ def main():
         print("Getting words from book")
         book_words = read_all_words_in_file(file)
         book_words = make_lowercase(book_words)
-        book_words = remove_punctuation(book_words)
+        #book_words = remove_punctuation(book_words)
         print("    ", len(book_words), " words found")
 
         # Remove common words
@@ -188,5 +190,5 @@ def main():
 
 
 # This runs if the file is executed and doesn't if the file is imported
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
