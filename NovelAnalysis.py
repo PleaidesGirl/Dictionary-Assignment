@@ -102,12 +102,22 @@ def remove_common_words(book_words, common_words):
 # no times.
 # Recall that the "in" operator is a good way of telling if a value is in a list.
 def count_number_of_words_that_appear_in_another_list(text_words, other_list):
-    return 0 # Need to implement this function
+    word_count = 0
+    for word in text_words:
+        if other_list.__contains__(word):
+            word_count += 1
+    return word_count
 
 # Calculate the average length of all the words in text_words.
 # Add up the length of each word and divide by the number of words.
 # Return that average.
 def average_word_length(text_words):
+    total_words = 0
+    total_word_length = 0
+    for word in text_words:
+        total_words += 1
+        total_word_length = total_word_length + len(word)
+        #I'm not sure if this works
     return 0 # Need to implement this function
 
 # Make a dictionary that has words of text_words as keys and how many
