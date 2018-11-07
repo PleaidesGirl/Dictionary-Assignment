@@ -152,7 +152,19 @@ def calculate_word_frequency(text_words):
 # The returned value would be 25 - 12.5 = 12.50.
 # You should use the count_number_of_words_that_appear_in_another_list function to do the counting.
 def calculate_sentiment( word_list, positive_words, negative_words):
-    return round(0.0,2) # Implement and replace 0.0 with the difference between the positive and negative percents.
+    total_word = 0
+    positive_amount = 0
+    negative_amount = 0
+    for word in word_list:
+        total_word += 1
+        if positive_words.__contains__(word):
+            positive_amount += 1
+        if negative_words.__contains(word):
+            negative_amount = 0
+    positive_percentage = positive_amount / total_word * 100
+    negative_percentage = negative_amount / total_word * 100
+    difference = positive_percentage - negative_percentage
+    return round(difference,2) # Implement and replace 0.0 with the difference between the positive and negative percents.
 
 
 # This code runs when the file is executed and is fully implemented.
