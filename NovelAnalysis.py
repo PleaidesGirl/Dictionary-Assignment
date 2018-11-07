@@ -159,7 +159,7 @@ def calculate_sentiment( word_list, positive_words, negative_words):
         total_word += 1
         if positive_words.__contains__(word):
             positive_amount += 1
-        if negative_words.__contains(word):
+        if negative_words.__contains__(word):
             negative_amount = 0
     positive_percentage = positive_amount / total_word * 100
     negative_percentage = negative_amount / total_word * 100
